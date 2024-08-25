@@ -10,7 +10,7 @@ type student struct {
 	Age  int
 }
 
-func exercise(w http.ResponseWriter, r *http.Request) {
+func exercise(w http.ResponseWriter, _ *http.Request) {
 	t, err := template.ParseFiles("./temp.tmpl")
 	if err != nil {
 		return

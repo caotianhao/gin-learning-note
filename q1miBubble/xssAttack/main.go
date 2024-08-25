@@ -5,7 +5,7 @@ import (
 	"net/http"
 )
 
-func xss(w http.ResponseWriter, r *http.Request) {
+func xss(w http.ResponseWriter, _ *http.Request) {
 	t, err := template.New("xss.tmpl").Funcs(template.FuncMap{
 		"mySafe": func(str string) template.HTML {
 			return template.HTML(str)

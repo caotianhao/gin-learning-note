@@ -5,7 +5,7 @@ import (
 	"net/http"
 )
 
-func nestDemo(w http.ResponseWriter, r *http.Request) {
+func nestDemo(w http.ResponseWriter, _ *http.Request) {
 	//这里一定要把被包含的写在后面
 	t, err := template.ParseFiles("./nest.tmpl", "./ul.tmpl")
 	if err != nil {

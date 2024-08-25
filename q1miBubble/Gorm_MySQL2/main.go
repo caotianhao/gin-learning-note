@@ -56,7 +56,7 @@ func main() {
 			fmt.Println("db.Close err =", err)
 			return
 		}
-	}(db) 
+	}(db)
 
 	db.AutoMigrate(&User{})
 
@@ -68,7 +68,7 @@ func main() {
 	//db.Debug().Create(&u)
 	db.Create(&u)
 	fmt.Println(db.NewRecord(&u))
-	//u2 := User2{Age: 925}
-	//u3 := User3{Age: 925}
-	//fmt.Println(u2, u3)
+	u2 := User2{Age: 925}
+	u3 := User3{Age: 925}
+	fmt.Println(u2, u3)
 }

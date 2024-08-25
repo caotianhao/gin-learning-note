@@ -5,8 +5,8 @@ import (
 	"text/template"
 )
 
-//很多网页长得都差不多，这时候就需要模板继承
-func index(w http.ResponseWriter, r *http.Request) {
+// 很多网页长得都差不多，这时候就需要模板继承
+func index(w http.ResponseWriter, _ *http.Request) {
 	t, err := template.ParseFiles("./index.tmpl")
 	if err != nil {
 		return
@@ -18,7 +18,7 @@ func index(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
-func home(w http.ResponseWriter, r *http.Request) {
+func home(w http.ResponseWriter, _ *http.Request) {
 	t, err := template.ParseFiles("./home.tmpl")
 	if err != nil {
 		return
@@ -30,8 +30,8 @@ func home(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
-//这里把 ./base.tmpl 写成 ./base,tmpl 了......改了半天
-func indexNew(w http.ResponseWriter, r *http.Request) {
+// 这里把 ./base.tmpl 写成 ./base,tmpl 了......改了半天
+func indexNew(w http.ResponseWriter, _ *http.Request) {
 	t, err := template.ParseFiles("./base.tmpl", "./indexNew.tmpl")
 	if err != nil {
 		return
@@ -45,7 +45,7 @@ func indexNew(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
-func homeNew(w http.ResponseWriter, r *http.Request) {
+func homeNew(w http.ResponseWriter, _ *http.Request) {
 	t, err := template.ParseFiles("./base.tmpl", "./homeNew.tmpl")
 	if err != nil {
 		return
